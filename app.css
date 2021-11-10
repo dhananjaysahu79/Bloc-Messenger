@@ -1,0 +1,194 @@
+body {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.Section {
+    background: #203bf5;
+
+}
+
+.Container {
+   z-index: 1;
+   width: 100%;
+   margin-right: auto;
+   margin-left: auto;
+}
+
+.Row {
+   display: flex;
+   margin: 0 -15px -15px -15px;
+   flex-wrap: wrap;
+   flex-direction: row;
+
+   @media screen and (max-width: 768px){
+      flex-direction: row-reverse;
+   }
+}
+
+
+.Column {
+    flex: 1;
+    max-width: 50%;
+    flex-basis: 50%;
+
+}
+
+.Wrapper {
+  margin: 80px;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: start;
+
+}
+
+.Heading {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 80px;
+    font-size: 40px;
+}
+
+.Input {
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: #101522;
+    border-style: none;
+    outline: none;
+    border: none;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
+    margin-bottom: 30px;
+    margin-right: 60px;
+    color: #fff;
+    font-size: 20px;
+
+    /* &::placeholder {
+      color: #fff;
+      font-size: 17px;
+    } */
+}
+.Input::placeholder {
+    color: #fff;
+    font-size: 17px;
+  }
+
+.Button {
+    border-radius: 4px;
+   background: linear-gradient(to right, #101522, #000);
+   padding: 18px 44px;
+   font-size: 16px;
+   white-space: nowrap;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
+   outline: none;
+   border: none;
+   cursor: pointer;
+   color: #fff;
+   margin-bottom: 20px;
+}
+
+.Card {
+    min-height: 800px;
+    background: #101522;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
+    padding: 2px;
+}
+
+li {
+    border-radius: 20px 20px 20px 0px;
+   background: linear-gradient(to left, #203bf5, #800080);
+   padding: 18px 18px;
+   font-size: 18px;
+   color: #fff;
+   min-width: 50%;
+   max-width: 80%;
+   float: left;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
+   margin-bottom: 20px;
+   margin-right: 40px;
+   justify-content: space-between;
+   align-items: center;
+   clear: left;
+}
+
+li:hover{
+    transform: scale(1.02);
+    transition: all 0.3s ease-out;
+    color: #fff;
+ }
+
+.twrap {
+    color: #fff;
+    font-size: 18px;
+    margin-right: 30px;
+    display: flex;
+    text-align: wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.Name {
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: #101522;
+    border-style: none;
+    outline: none;
+    border: none;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
+    margin-bottom: 30px;
+    margin-right: 60px;
+    color: #fff;
+    font-size: 15px;
+}
+.Name::placeholder {
+    color: #fff;
+    font-size: 15px;
+  }
+
+@media screen and (max-width: 768px) {
+   .Column{
+    max-width: 100%;
+    flex-basis: 100%;
+   }
+
+   .Row {
+       flex-direction: column-reverse;
+   }
+
+   .Card {
+       min-height: 86vh;
+   }
+   .Heading {
+       display: none;
+   }
+
+   .Wrapper {
+       margin: 0;
+       margin-left: 20px;
+       margin-top: 10px;
+       flex-direction: row;
+       display: flex;
+   }
+   form {
+    flex-direction: row;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+   }
+   .Input {
+       min-width: 110%;
+   }
+
+   .Button {
+       height: 60px;
+       padding: 10px;
+       border-radius: 50px;
+       margin-left: -45px;
+       margin-top: 4px;
+   }
+}
+

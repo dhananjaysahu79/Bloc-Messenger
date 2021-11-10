@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="app.css">
+    </head>
+  <body>
+
+   <div class="Section">
+    <div class="Container">
+      <div class="Row">
+        <div class="Column">
+          <div class="Wrapper">
+             <h1 class = "Heading">BlockChain Messenger</h1>
+             <form>
+              <textarea placeholder = "Write your message" class = "Input"></textarea>
+              <button class = "Button">Send</button>
+             </form>
+          </div>
+        </div>
+        <div class = "Column">
+          <div class = "Card">
+            <input class = "Name" placeholder="Please write your name here..."></input>
+            <ul></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+
+
+    <!-- <ul></ul> -->
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gun@0.2020.1233/gun.js"></script>
+    <script>
+       var gun = Gun().get('thoughts');
+       $('form').on('submit', function(event){
+        event.preventDefault();
+        gun.set( $('input').val() + ': ' + $('textarea').val());
+        $('textarea').val("");
+      });
+
+      gun.map().on(function(thought, id){
+        var li = $('#' + id).get(0) || $("<li>").attr('id', id).appendTo('ul');
+        if(thought){
+          $(li).append("<div class = 'twrap'>"+thought+"</div>");
+        } else {
+          $(li).hide();
+        }
+      });
+
+      $('body').on('dblclick', 'li', function(event){
+        gun.get(this.id).put(null);
+      });
+
+    </script>
+  </body>
+</html>
